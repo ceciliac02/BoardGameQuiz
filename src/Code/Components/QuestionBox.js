@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export default styled.div`
-    height: 50vh;
-    width: 80vw;
-    border: 2px solid ${props => props.theme.color4};
+    height: 60vh;
+    width: 60vw;
+    background-color: ${props => props.theme.color1};
     border-radius: 5px;
     display: flex;
     flex-direction: column;

@@ -5,14 +5,15 @@ export default styled.div`
     width: 8vw;
     background-color: ${props => props.theme.color2};
     font-size: 1.3rem;
-    font-weight: bold;
+    font-family: ${props => props.theme.font};
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    transform: translateY(50%);
+    transform: translateY(30%);
     &:hover {
-        color: white;
+        color: ${props => props.theme.color1};
+        text-shadow: 3px 3px ${props => props.theme.color3};
         cursor: pointer;
     }
 `;

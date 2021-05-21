@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-    width: 80vw;
+    width: 60vw;
     height: 10vh;
     background-color: ${props => props.theme.color2};
     border-radius: 5px;
