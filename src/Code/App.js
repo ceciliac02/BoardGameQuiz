@@ -5,7 +5,7 @@ import Header from './Components/Header';
 import MainBox from './Components/MainBox';
 import QuestionHeader from './Components/QuestionContainer';
 import QuestionBox from './Components/QuestionBox';
-import { Form, Input, Label, InputContainer } from './Components/AnswerContainer';
+import { ChoiceContainer, Choice } from './Components/AnswerContainer';
 import Submit from './Components/Submit';
 import Questions from './Components/Questions';
 
@@ -170,6 +170,10 @@ class App extends React.Component {
         let apiLink = `https://api.boardgameatlas.com/api/search?categories=${category}&max_players=${players}&lt_max_playtime=${maxPlaytime}&fields=name,id,categories,description,image_url,max_players,max_playtime&client_id=cAAzRV0ENd`;
         console.log(apiLink)
       }
+      let selected = document.querySelectorAll(".option");
+      for (let i = 0; i < selected.length; i++) {
+        selected[i].classList.remove("selected");
+      }
     }
   }
 
@@ -179,11 +183,17 @@ class App extends React.Component {
     })
   }
 
-  tempAnswerChange = e => {
+  tempAnswerChange = (option, target) => {
     this.setState({
-      tempAnswer: e
+      tempAnswer: option,
+      hasAnswered: true,
     })
-    console.log(e)
+    let selected = document.querySelectorAll(".option");
+    for (let i = 0; i < selected.length; i++) {
+      selected[i].classList.remove("selected");
+    }
+    let id = document.getElementById(target);
+    id.classList.toggle("selected");
   }
 
   enterButton = event => {
@@ -203,8 +213,55 @@ class App extends React.Component {
               {this.state.question}
             </QuestionHeader>
             <QuestionBox>
-              <Form onKeyDown={e => {this.enterButton(e)}}>
-                <InputContainer>
+                <ChoiceContainer id="a1" className="option" onClick={() => {this.tempAnswerChange(this.state.option1, "a1")}}>
+                  <Choice>
+                    {this.state.option1}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a2" className="option" onClick={() => {this.tempAnswerChange(this.state.option2, "a2")}}>
+                  <Choice>
+                    {this.state.option2}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a3" className="option" onClick={() => {this.tempAnswerChange(this.state.option3, "a3")}}>
+                  <Choice>
+                    {this.state.option3}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a4" className="option" onClick={() => {this.tempAnswerChange(this.state.option4, "a4")}}>
+                  <Choice>
+                    {this.state.option4}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a5" className="option" onClick={() => {this.tempAnswerChange(this.state.option5, "a5")}}>
+                  <Choice>
+                    {this.state.option5}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a6" className="option" onClick={() => {this.tempAnswerChange(this.state.option6, "a6")}}>
+                  <Choice>
+                    {this.state.option6}
+                  </Choice>
+                </ChoiceContainer>
+                <ChoiceContainer id="a7" className="option" onClick={() => {this.tempAnswerChange(this.state.option7, "a7")}}>
+                  <Choice>
+                    {this.state.option7}
+                  </Choice>
+                </ChoiceContainer>
+              <Submit onClick={this.incrementQ}>
+                Next
+              </Submit>
+            </QuestionBox>
+          </MainBox>
+      </Background>
+    </ThemeProvider>
+    )
+  }
+}
+
+export default App;
+/*
+<InputContainer>
                   <Input type="radio" value={this.state.option1} name="question" id="a1" onClick={e => {this.tempAnswerChange(e.target.value)} } onChange={this.changeSelected} />
                   <Label htmlFor="a1">
                     {this.state.option1}
@@ -246,16 +303,4 @@ class App extends React.Component {
                     {this.state.option7}
                   </Label>
                 </InputContainer>
-              </Form>
-              <Submit onClick={this.incrementQ}>
-                Next
-              </Submit>
-            </QuestionBox>
-          </MainBox>
-      </Background>
-    </ThemeProvider>
-    )
-  }
-}
-
-export default App;
+              </Form>*/

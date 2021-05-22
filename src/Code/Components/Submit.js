@@ -10,7 +10,7 @@ export default styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    transform: translateY(30%);
+    transform: translateY(10%);
     &:hover {
         color: ${props => props.theme.color1};
         text-shadow: 3px 3px ${props => props.theme.color3};
