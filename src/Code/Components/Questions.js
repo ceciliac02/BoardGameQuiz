@@ -10,7 +10,7 @@ const Questions = counter => {
             question = "Pick a second keyword that interests you";
             break;
         case 2:
-            question = "How many friends can you gather up?";
+            question = "How many friends can you gather up (plus yourself)?";
             break;
         case 3:
             question = "How long are you willing to dedicate?";
