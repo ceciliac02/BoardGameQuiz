@@ -36,7 +36,7 @@ export const ResultName = styled.div`
 
 export const ResultImage = styled.div`
     img {
-        max-height: 180px;
+        max-height: 160px;
         width: auto;
     }
 `;

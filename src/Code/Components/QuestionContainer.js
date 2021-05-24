@@ -5,6 +5,7 @@ export default styled.div`
     height: 10vh;
     background-color: ${props => props.theme.color2};
     border-radius: 5px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;

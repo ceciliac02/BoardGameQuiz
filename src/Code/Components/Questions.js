@@ -1,5 +1,3 @@
-
-
 const Questions = counter => {
     let question = "";
     switch (counter) {

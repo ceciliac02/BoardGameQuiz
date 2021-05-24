@@ -10,7 +10,7 @@ export const LargeChoiceContainer = styled.div`
     display: none
 `;
 
-export const Begin = styled.div`
+export const BeginEnd = styled.div`
     height: 30%;
     width: 50%;
     background-color: ${props => props.theme.color2};
